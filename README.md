@@ -15,7 +15,7 @@ More info here: [SMSified API Docs](http://www.smsified.com/sms-api-documentatio
 Installation
 ------------
 
-	npm intall smsified
+	npm install smsified
 
 
 Usage Examples
