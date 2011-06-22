@@ -44,6 +44,30 @@ sms.sendMessage(options, function(result) {
 });
 ```
 
+Process an inbound SMS message:
+
+```js
+var sys = require('sys');
+var http = require('http');
+var smsified = require('../lib/smsified');
+var port = 8000 || process.ARGS[1];
+
+// Create a new HTTP server to listen for incoming messages.
+var server = http.createServer(function(req, res) {
+
+        req.addListener('data', function(data){
+        var json = JSON.parse(data);
+        var inbound = new InboundMessage(json);
+        sys.puts('Inbound message: ' + inbound.message);
+        });
+
+        res.writeHead(200);
+        res.end();
+
+}).listen(port);
+sys.puts('Server listening on port ' + port);
+```
+
 Check the status of an SMS message:
 
 ```js
