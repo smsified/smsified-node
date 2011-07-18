@@ -1,7 +1,7 @@
 {
   "name": "smsified",
   "description": "A Node.js library for interaction with the SMSified API.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "homepage": "http://smsified.com",
   "author": "Mark Headd <mheadd@voxeo.com> (http://smsified.com)",
   "main": "./lib/smsified",
@@ -10,6 +10,6 @@
     { "type":"git", "url":"https://github.com/smsified/smsified-node" }
   ],
   "engines": {
-    "node": "> 0.4"
+    "node": ">=0.4.0"
   }
 }
