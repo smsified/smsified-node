@@ -1,7 +1,7 @@
 /**
  * Process an inbound SMS message.
  */
-var sys = require('sys');
+var util = require('util');
 var http = require('http');
 var smsified = require('../lib/smsified');
 var port = 8000 || process.ARGS[1];
@@ -17,11 +17,11 @@ var server = http.createServer(function(req, res) {
         	var inbound = new InboundMessage(json);
         	
         	// Access desired property of Inbound Message object.
-        	sys.puts('Inbound message: ' + inbound.message);
+        	util.puts('Inbound message: ' + inbound.message);
         });
 
         res.writeHead(200);
         res.end();
 
 }).listen(port);
-sys.puts('Server listening on port ' + port);
+util.puts('Server listening on port ' + port);
